@@ -1,0 +1,1700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Ly ♡</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=IM+Fell+English:ital@0;1&family=Parisienne&display=swap" rel="stylesheet">
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at 15% 20%, rgba(255,255,255,.35), transparent 25%),
+        radial-gradient(circle at 85% 80%, rgba(255,255,255,.3), transparent 25%),
+        #e9aebb;
+
+    color: #38231f;
+}
+
+
+/* =====================================================
+   SLIDES
+===================================================== */
+
+.slide {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 35px 25px 80px;
+
+    overflow-y: auto;
+}
+
+.slide.active {
+    display: flex;
+
+    animation: slideIn .65s ease;
+}
+
+@keyframes slideIn {
+
+    from {
+        opacity: 0;
+        transform: translateX(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* =====================================================
+   LITTLE BACKGROUND DETAILS
+===================================================== */
+
+.background-heart {
+    position: fixed;
+
+    font-family: "Caveat", cursive;
+
+    font-size: 35px;
+
+    color: rgba(80, 38, 42, .25);
+
+    z-index: 0;
+
+    pointer-events: none;
+}
+
+.heart-one {
+    top: 8%;
+    left: 7%;
+    transform: rotate(-15deg);
+}
+
+.heart-two {
+    bottom: 12%;
+    right: 8%;
+    transform: rotate(15deg);
+}
+
+.heart-three {
+    top: 70%;
+    left: 10%;
+    transform: rotate(10deg);
+}
+
+
+/* =====================================================
+   OLD PAPER
+===================================================== */
+
+.paper {
+
+    position: relative;
+
+    background:
+
+        radial-gradient(
+            ellipse at 15% 20%,
+            rgba(130, 74, 35, .15),
+            transparent 18%
+        ),
+
+        radial-gradient(
+            ellipse at 80% 75%,
+            rgba(120, 67, 30, .13),
+            transparent 20%
+        ),
+
+        repeating-linear-gradient(
+            to bottom,
+            transparent 0px,
+            transparent 31px,
+            rgba(92, 55, 35, .09) 32px
+        ),
+
+        #ead19d;
+
+    box-shadow:
+        0 18px 35px rgba(62, 30, 25, .28),
+        inset 0 0 45px rgba(87, 43, 22, .18);
+
+    border: 1px solid rgba(83, 45, 25, .35);
+
+    color: #34221c;
+}
+
+
+/* burnt edges */
+
+.paper::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -7px;
+
+    z-index: -1;
+
+    background:
+        radial-gradient(
+            ellipse at top left,
+            #59351f 0%,
+            transparent 8%
+        ),
+        radial-gradient(
+            ellipse at top right,
+            #59351f 0%,
+            transparent 8%
+        ),
+        radial-gradient(
+            ellipse at bottom left,
+            #59351f 0%,
+            transparent 8%
+        ),
+        radial-gradient(
+            ellipse at bottom right,
+            #59351f 0%,
+            transparent 8%
+        );
+
+    filter: blur(3px);
+}
+
+
+/* extra old paper border */
+
+.paper::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 11px;
+
+    border: 1px solid rgba(87, 48, 27, .22);
+
+    pointer-events: none;
+}
+
+
+/* coffee stains */
+
+.coffee-stain {
+
+    position: absolute;
+
+    width: 100px;
+    height: 100px;
+
+    border-radius: 50%;
+
+    border: 10px solid rgba(107, 63, 34, .12);
+
+    opacity: .8;
+
+    pointer-events: none;
+}
+
+.stain-one {
+    left: -35px;
+    bottom: 35px;
+}
+
+.stain-two {
+    right: -25px;
+    top: 30px;
+    width: 75px;
+    height: 75px;
+}
+
+
+/* ink scribbles */
+
+.scribble {
+
+    position: absolute;
+
+    font-family: "Caveat", cursive;
+
+    font-size: 30px;
+
+    color: rgba(50, 30, 25, .55);
+
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   HANDWRITING
+===================================================== */
+
+.handwriting {
+    font-family: "Caveat", cursive;
+}
+
+.old-font {
+    font-family: "IM Fell English", serif;
+}
+
+
+/* =====================================================
+   BUTTON
+===================================================== */
+
+.next-btn {
+
+    border: 1px solid rgba(80, 39, 30, .35);
+
+    background: #e1c48d;
+
+    color: #3d251d;
+
+    font-family: "Caveat", cursive;
+
+    font-size: 24px;
+
+    padding: 8px 27px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 10px rgba(60, 30, 20, .2);
+
+    transform: rotate(-1deg);
+
+    transition: .25s;
+}
+
+.next-btn:hover {
+
+    transform:
+        rotate(1deg)
+        translateY(-3px);
+
+    background: #d8b97d;
+}
+
+
+/* =====================================================
+   SLIDE 1
+===================================================== */
+
+#slide1 {
+
+    text-align: center;
+}
+
+.intro-paper {
+
+    width: min(620px, 92vw);
+
+    padding:
+        65px 55px 45px;
+
+    transform: rotate(-1deg);
+}
+
+.intro-small {
+
+    font-family: "IM Fell English", serif;
+
+    font-style: italic;
+
+    font-size: 18px;
+
+    margin-bottom: 5px;
+
+    opacity: .7;
+}
+
+.intro-title {
+
+    font-family: "Parisienne", cursive;
+
+    font-size:
+        clamp(70px, 12vw, 125px);
+
+    font-weight: 400;
+
+    color: #512b2d;
+
+    line-height: 1;
+
+    margin-bottom: 10px;
+}
+
+.intro-subtitle {
+
+    font-family: "Caveat", cursive;
+
+    font-size: 28px;
+
+    margin-bottom: 25px;
+}
+
+
+/* CAT 1 */
+
+.cat-frame {
+
+    width: min(310px, 72vw);
+
+    margin: 0 auto 30px;
+
+    padding: 10px 10px 25px;
+
+    background: #eee2c5;
+
+    box-shadow:
+        0 8px 15px rgba(50, 30, 20, .22);
+
+    transform: rotate(2deg);
+}
+
+.cat-frame img {
+
+    display: block;
+
+    width: 100%;
+
+    height: 270px;
+
+    object-fit: cover;
+
+    filter: sepia(.25) saturate(.8);
+
+}
+
+.cat-caption {
+
+    font-family: "Caveat", cursive;
+
+    font-size: 21px;
+
+    margin-top: 7px;
+}
+
+
+/* =====================================================
+   SLIDE 2
+===================================================== */
+
+.letter-paper {
+
+    width: min(900px, 94vw);
+
+    max-height: 88vh;
+
+    overflow-y: auto;
+
+    padding:
+        60px clamp(30px, 7vw, 75px);
+
+    transform: rotate(.3deg);
+}
+
+.letter-heading {
+
+    font-family: "Parisienne", cursive;
+
+    font-size: 55px;
+
+    font-weight: 400;
+
+    color: #522c2e;
+
+    margin-bottom: 20px;
+}
+
+.letter-text {
+
+    font-family: "Caveat", cursive;
+
+    font-size:
+        clamp(22px, 2.3vw, 29px);
+
+    line-height: 1.55;
+
+    letter-spacing: .2px;
+}
+
+.signature {
+
+    text-align: right;
+
+    font-family: "Parisienne", cursive;
+
+    font-size: 35px;
+
+    margin-top: 30px;
+
+    padding-right: 20px;
+}
+
+.bottom-button {
+
+    text-align: center;
+
+    margin-top: 25px;
+}
+
+
+/* =====================================================
+   SLIDE 3
+===================================================== */
+
+.feedback-container {
+
+    width: min(900px, 94vw);
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+}
+
+.feedback-paper {
+
+    padding:
+        50px clamp(30px, 6vw, 65px);
+
+    transform: rotate(-.4deg);
+}
+
+.feedback-paper p {
+
+    font-family: "Caveat", cursive;
+
+    font-size:
+        clamp(23px, 2.4vw, 29px);
+
+    line-height: 1.55;
+}
+
+.feedback-heading {
+
+    text-align: center;
+
+    font-family: "Parisienne", cursive;
+
+    font-size: 48px;
+
+    font-weight: 400;
+
+    margin-top: 35px;
+
+    margin-bottom: 5px;
+}
+
+.feedback-subtitle {
+
+    text-align: center;
+
+    font-family: "Caveat", cursive;
+
+    font-size: 23px;
+
+    margin-bottom: 18px;
+}
+
+
+/* FORM */
+
+#feedbackForm {
+
+    width: 100%;
+}
+
+textarea {
+
+    width: 100%;
+
+    height: 210px;
+
+    resize: vertical;
+
+    outline: none;
+
+    border: 1px solid rgba(76, 43, 27, .35);
+
+    padding: 15px 18px;
+
+    background:
+
+        repeating-linear-gradient(
+            to bottom,
+            #ead19d 0px,
+            #ead19d 34px,
+            rgba(90, 52, 30, .16) 35px
+        );
+
+    color: #39251e;
+
+    font-family: "Caveat", cursive;
+
+    font-size: 23px;
+
+    line-height: 35px;
+
+    box-shadow:
+        inset 0 0 20px rgba(90, 50, 25, .12);
+}
+
+textarea::placeholder {
+
+    color: rgba(60, 35, 25, .55);
+
+    font-style: italic;
+}
+
+.send-area {
+
+    text-align: center;
+
+    margin-top: 18px;
+}
+
+.status {
+
+    font-family: "Caveat", cursive;
+
+    font-size: 21px;
+
+    min-height: 28px;
+
+    margin-top: 8px;
+}
+
+.feedback-next {
+
+    text-align: center;
+
+    margin-top: 20px;
+}
+
+
+/* =====================================================
+   SLIDE 4
+===================================================== */
+
+.final-container {
+
+    width: min(850px, 94vw);
+
+    text-align: center;
+}
+
+.final-paper {
+
+    padding:
+        55px clamp(30px, 7vw, 75px);
+
+    text-align: left;
+
+    transform: rotate(.6deg);
+
+    margin-bottom: 30px;
+}
+
+.final-heading {
+
+    font-family: "Parisienne", cursive;
+
+    font-size: 55px;
+
+    font-weight: 400;
+
+    margin-bottom: 15px;
+}
+
+.final-text {
+
+    font-family: "Caveat", cursive;
+
+    font-size:
+        clamp(23px, 2.4vw, 29px);
+
+    line-height: 1.55;
+}
+
+
+/* CAT 2 */
+
+.cat-two-frame {
+
+    display: inline-block;
+
+    background: #eee2c5;
+
+    padding: 10px 10px 27px;
+
+    box-shadow:
+        0 9px 18px rgba(50, 30, 20, .25);
+
+    transform: rotate(-3deg);
+
+    margin-bottom: 25px;
+}
+
+.cat-two-frame img {
+
+    width: min(310px, 70vw);
+
+    height: 250px;
+
+    object-fit: cover;
+
+    display: block;
+
+    filter: sepia(.3) saturate(.8);
+}
+
+.cat-two-caption {
+
+    font-family: "Caveat", cursive;
+
+    font-size: 23px;
+
+    margin-top: 7px;
+}
+
+
+/* =====================================================
+   SLIDE 5
+===================================================== */
+
+.final-question {
+
+    width: min(850px, 94vw);
+
+    text-align: center;
+}
+
+.question-paper {
+
+    padding:
+        65px 30px 55px;
+
+    transform: rotate(-.7deg);
+}
+
+.question-heading {
+
+    font-family: "Parisienne", cursive;
+
+    font-size:
+        clamp(60px, 10vw, 95px);
+
+    font-weight: 400;
+
+    color: #512b2d;
+
+    line-height: 1;
+
+    margin-bottom: 15px;
+}
+
+.question-subtitle {
+
+    font-family: "Caveat", cursive;
+
+    font-size: 25px;
+
+    margin-bottom: 40px;
+}
+
+
+/* YES NO */
+
+.buttons {
+
+    position: relative;
+
+    min-height: 140px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 30px;
+}
+
+.answer-btn {
+
+    border: 1px solid rgba(80, 39, 30, .35);
+
+    font-family: "Caveat", cursive;
+
+    font-size: 27px;
+
+    padding: 10px 35px;
+
+    cursor: pointer;
+
+    transition: .25s;
+}
+
+#yesBtn {
+
+    background: #8c4e5d;
+
+    color: white;
+
+    box-shadow:
+        0 5px 12px rgba(60, 30, 25, .25);
+
+    z-index: 5;
+}
+
+#noBtn {
+
+    background: #dfc28c;
+
+    color: #3e281e;
+
+    position: relative;
+
+    z-index: 4;
+}
+
+.accepted {
+
+    display: none;
+
+    margin-top: 25px;
+
+    animation: pop .7s ease;
+}
+
+.accepted h2 {
+
+    font-family: "Parisienne", cursive;
+
+    font-size: 65px;
+
+    font-weight: 400;
+
+    color: #65313c;
+}
+
+.accepted p {
+
+    font-family: "Caveat", cursive;
+
+    font-size: 26px;
+
+    line-height: 1.4;
+}
+
+@keyframes pop {
+
+    0% {
+        opacity: 0;
+        transform: scale(.5) rotate(-5deg);
+    }
+
+    70% {
+        transform: scale(1.08) rotate(2deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0);
+    }
+}
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+.navigation {
+
+    position: fixed;
+
+    bottom: 18px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    gap: 9px;
+
+    z-index: 50;
+
+    padding: 8px 14px;
+
+    background: rgba(244, 210, 215, .75);
+
+    backdrop-filter: blur(5px);
+
+    border-radius: 30px;
+}
+
+.dot {
+
+    width: 10px;
+    height: 10px;
+
+    border-radius: 50%;
+
+    background: rgba(80, 38, 42, .3);
+
+    cursor: pointer;
+
+    transition: .25s;
+}
+
+.dot.active {
+
+    background: #673642;
+
+    transform: scale(1.4);
+}
+
+
+/* =====================================================
+   FALLING HEARTS
+===================================================== */
+
+.flying-heart {
+
+    position: fixed;
+
+    top: 100vh;
+
+    z-index: 100;
+
+    pointer-events: none;
+
+    animation: flyUp 3.2s linear forwards;
+}
+
+@keyframes flyUp {
+
+    from {
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 1;
+    }
+
+    to {
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .slide {
+        padding:
+            20px 14px 70px;
+    }
+
+    .intro-paper {
+        padding:
+            45px 25px 35px;
+    }
+
+    .letter-paper,
+    .feedback-paper,
+    .final-paper {
+        padding:
+            40px 25px;
+    }
+
+    .letter-text,
+    .feedback-paper p,
+    .final-text {
+        font-size: 21px;
+    }
+
+    .letter-heading,
+    .final-heading {
+        font-size: 45px;
+    }
+
+    .question-paper {
+        padding:
+            50px 20px;
+    }
+
+    .question-subtitle {
+        font-size: 21px;
+    }
+
+    .buttons {
+        gap: 15px;
+    }
+
+    .answer-btn {
+        font-size: 23px;
+        padding: 9px 25px;
+    }
+
+    .accepted h2 {
+        font-size: 52px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- BACKGROUND SCRIBBLES -->
+
+<div class="background-heart heart-one">♡</div>
+<div class="background-heart heart-two">♡</div>
+<div class="background-heart heart-three">☆</div>
+
+
+<!-- =====================================================
+     SLIDE 1
+===================================================== -->
+
+<section class="slide active" id="slide1">
+
+    <div class="paper intro-paper">
+
+        <div class="coffee-stain stain-one"></div>
+        <div class="coffee-stain stain-two"></div>
+
+        <div class="scribble" style="top:25px;left:30px;">
+            ☆
+        </div>
+
+        <div class="scribble" style="right:35px;bottom:30px;">
+            ♡
+        </div>
+
+        <div class="intro-small">
+            uhh... this is important
+        </div>
+
+        <h1 class="intro-title">
+            Hey Lydya
+        </h1>
+
+        <div class="intro-subtitle">
+            orrr... Ly ♡
+        </div>
+
+
+        <!-- CAT 1 -->
+
+        <div class="cat-frame">
+
+            <img
+                src="cat1.jpg"
+                alt="Cat"
+            >
+
+            <div class="cat-caption">
+                don't judge the cat
+            </div>
+
+        </div>
+
+
+        <button
+            class="next-btn"
+            onclick="nextSlide()"
+        >
+            Open this →
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SLIDE 2
+===================================================== -->
+
+<section class="slide" id="slide2">
+
+    <div class="letter-paper paper">
+
+        <div class="coffee-stain stain-one"></div>
+        <div class="coffee-stain stain-two"></div>
+
+        <div class="scribble" style="top:25px;right:35px;">
+            ♡
+        </div>
+
+        <div class="scribble" style="bottom:30px;left:30px;">
+            ☆
+        </div>
+
+
+        <h2 class="letter-heading">
+            Dear Ly, ♡
+        </h2>
+
+
+        <p class="letter-text">
+
+            Hey lydya or i will call ly, Sorry i know i am so mean and rude but i never want to hurt u by saying fatty okk u are perfect. I m just like this hahah sorry for the laugh but yeah, dont say i write a paragraph and cringe all kill u, i made this because u felt bad, i wanted to add song which i sang for u but nevermind any otherday, and yeahh and am waitin since 10 minutes reply to message i wrote no wait atleast reply 4 eyessssssssss dont scroll tiktokkk i k u are doin that and yeahhh i a going to play football and yeah i wanted to write more but i will write it later, made it very fastt so dont mind hehhe and yeahh
+
+        </p>
+
+
+        <div class="signature">
+            — someone who is sorry hehe ♡
+        </div>
+
+
+        <div class="bottom-button">
+
+            <button
+                class="next-btn"
+                onclick="nextSlide()"
+            >
+                Nextt →
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SLIDE 3
+===================================================== -->
+
+<section class="slide" id="slide3">
+
+    <div class="feedback-container">
+
+        <div class="paper feedback-paper">
+
+            <div class="coffee-stain stain-one"></div>
+            <div class="coffee-stain stain-two"></div>
+
+
+            <div class="scribble" style="top:20px;right:30px;">
+                ♡
+            </div>
+
+
+            <p>
+
+                This doesnt mean i am stoppping annoying i will annoy u but never sayinn fatty okkk u are not commonnnnnnnnnn who is fat at 45 -55 u are stick hey sorry but hehehehehe and yeahhh i am getting late need to go i have training.
+
+            </p>
+
+
+            <h2 class="feedback-heading">
+                Any feedback? ♡
+            </h2>
+
+            <div class="feedback-subtitle">
+                anything to sayyyy:
+            </div>
+
+
+            <!-- FORMSPREE -->
+
+            <form
+                id="feedbackForm"
+                action="https://formspree.io/f/mnpqdgdp"
+                method="POST"
+            >
+
+                <textarea
+                    name="message"
+                    placeholder="Write anything you want here..."
+                    required
+                ></textarea>
+
+
+                <input
+                    type="hidden"
+                    name="subject"
+                    value="Lydya's feedback 💗"
+                >
+
+
+                <div class="send-area">
+
+                    <button
+                        class="next-btn"
+                        type="submit"
+                        id="sendButton"
+                    >
+                        Send to me ♡
+                    </button>
+
+                    <div
+                        class="status"
+                        id="formStatus"
+                    ></div>
+
+                </div>
+
+            </form>
+
+
+            <div class="feedback-next">
+
+                <button
+                    class="next-btn"
+                    onclick="nextSlide()"
+                >
+                    Nextt →
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SLIDE 4
+===================================================== -->
+
+<section class="slide" id="slide4">
+
+    <div class="final-container">
+
+
+        <div class="paper final-paper">
+
+            <div class="coffee-stain stain-one"></div>
+            <div class="coffee-stain stain-two"></div>
+
+
+            <div class="scribble" style="right:30px;top:25px;">
+                ☆
+            </div>
+
+
+            <h2 class="final-heading">
+                Again...
+            </h2>
+
+
+            <p class="final-text">
+
+                Again if u felt bad sorry and i created a bot to auto send message like said wait and ... to reply u until this get send and yeahh another thing u are shorrt anyways and eat alot who cares i said goal 55 i wont say fat but i will say 55
+
+            </p>
+
+        </div>
+
+
+        <!-- CAT 2 -->
+
+        <div class="cat-two-frame">
+
+            <img
+                src="cat2.jpg"
+                alt="Cat"
+            >
+
+            <div class="cat-two-caption">
+                =^.^=
+            </div>
+
+        </div>
+
+
+        <br>
+
+
+        <button
+            class="next-btn"
+            onclick="nextSlide()"
+        >
+            Last thing →
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SLIDE 5
+===================================================== -->
+
+<section class="slide" id="slide5">
+
+    <div class="final-question">
+
+        <div class="paper question-paper">
+
+            <div class="coffee-stain stain-one"></div>
+            <div class="coffee-stain stain-two"></div>
+
+
+            <div class="scribble" style="left:30px;top:25px;">
+                ♡
+            </div>
+
+            <div class="scribble" style="right:30px;bottom:25px;">
+                ☆
+            </div>
+
+
+            <h1 class="question-heading">
+                So apology<br>
+                accepted?
+            </h1>
+
+
+            <p class="question-subtitle">
+                choose wisely... 👀
+            </p>
+
+
+            <div class="buttons">
+
+
+                <button
+                    class="answer-btn"
+                    id="yesBtn"
+                    onclick="yesClicked()"
+                >
+                    YES ♡
+                </button>
+
+
+                <button
+                    class="answer-btn"
+                    id="noBtn"
+                    onclick="noClicked()"
+                >
+                    NO 😭
+                </button>
+
+            </div>
+
+
+            <!-- ACCEPTED MESSAGE -->
+
+            <div
+                class="accepted"
+                id="accepted"
+            >
+
+                <h2>
+                    LESSGOOO 😭♡
+                </h2>
+
+                <p>
+
+                    I knew you would accept it hehe.
+
+                    <br>
+
+                    Reply me on that feedback toooo.
+
+                    <br>
+
+                    I'm playing rn when you see this 😭⚽
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<div class="navigation">
+
+    <div
+        class="dot active"
+        onclick="goToSlide(1)"
+    ></div>
+
+    <div
+        class="dot"
+        onclick="goToSlide(2)"
+    ></div>
+
+    <div
+        class="dot"
+        onclick="goToSlide(3)"
+    ></div>
+
+    <div
+        class="dot"
+        onclick="goToSlide(4)"
+    ></div>
+
+    <div
+        class="dot"
+        onclick="goToSlide(5)"
+    ></div>
+
+</div>
+
+
+
+<script>
+
+/* =====================================================
+   SLIDE NAVIGATION
+===================================================== */
+
+let currentSlide = 1;
+
+const slides =
+    document.querySelectorAll(".slide");
+
+const dots =
+    document.querySelectorAll(".dot");
+
+
+function goToSlide(number) {
+
+    slides.forEach(slide => {
+        slide.classList.remove("active");
+    });
+
+    dots.forEach(dot => {
+        dot.classList.remove("active");
+    });
+
+
+    document
+        .getElementById("slide" + number)
+        .classList.add("active");
+
+
+    dots[number - 1]
+        .classList.add("active");
+
+
+    currentSlide = number;
+
+}
+
+
+function nextSlide() {
+
+    if (currentSlide < 5) {
+
+        goToSlide(
+            currentSlide + 1
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   YES / NO
+===================================================== */
+
+let yesScale = 1;
+
+
+function noClicked() {
+
+    yesScale += 0.25;
+
+
+    const yes =
+        document.getElementById("yesBtn");
+
+    yes.style.transform =
+        `scale(${yesScale})`;
+
+
+    const no =
+        document.getElementById("noBtn");
+
+
+    /*
+       Make NO move around
+    */
+
+    const x =
+        Math.floor(
+            Math.random() * 180
+        ) - 90;
+
+
+    const y =
+        Math.floor(
+            Math.random() * 100
+        ) - 50;
+
+
+    no.style.transform =
+        `translate(${x}px, ${y}px)`;
+
+
+    /*
+       Eventually make YES impossible
+       to ignore 😂
+    */
+
+    if (yesScale >= 2.5) {
+
+        yes.innerText =
+            "JUST SAY YES 😭♡";
+
+    }
+
+}
+
+
+function yesClicked() {
+
+    const yes =
+        document.getElementById("yesBtn");
+
+    const no =
+        document.getElementById("noBtn");
+
+    const accepted =
+        document.getElementById("accepted");
+
+
+    yes.style.display =
+        "none";
+
+    no.style.display =
+        "none";
+
+
+    accepted.style.display =
+        "block";
+
+
+    createHearts();
+
+}
+
+
+/* =====================================================
+   HEART ANIMATION
+===================================================== */
+
+function createHearts() {
+
+    for (
+        let i = 0;
+        i < 30;
+        i++
+    ) {
+
+        const heart =
+            document.createElement("div");
+
+
+        heart.className =
+            "flying-heart";
+
+
+        heart.innerText =
+            Math.random() > .5
+            ? "♡"
+            : "♥";
+
+
+        heart.style.left =
+            Math.random() * 100 + "vw";
+
+
+        heart.style.fontSize =
+            (18 + Math.random() * 25) + "px";
+
+
+        heart.style.animationDelay =
+            Math.random() * .8 + "s";
+
+
+        document.body.appendChild(
+            heart
+        );
+
+
+        setTimeout(() => {
+
+            heart.remove();
+
+        }, 4000);
+
+    }
+
+}
+
+
+/* =====================================================
+   FORMSPREE
+===================================================== */
+
+const form =
+    document.getElementById(
+        "feedbackForm"
+    );
+
+
+const status =
+    document.getElementById(
+        "formStatus"
+    );
+
+
+const sendButton =
+    document.getElementById(
+        "sendButton"
+    );
+
+
+form.addEventListener(
+    "submit",
+    async function(event) {
+
+        event.preventDefault();
+
+
+        sendButton.disabled =
+            true;
+
+
+        sendButton.innerText =
+            "Sending... ♡";
+
+
+        status.innerText =
+            "sending your message to me...";
+
+
+        const data =
+            new FormData(form);
+
+
+        try {
+
+            const response =
+                await fetch(
+                    form.action,
+                    {
+                        method: "POST",
+
+                        body: data,
+
+                        headers: {
+                            "Accept":
+                                "application/json"
+                        }
+                    }
+                );
+
+
+            if (response.ok) {
+
+                status.innerText =
+                    "sent successfullyyy ♡";
+
+                sendButton.innerText =
+                    "Sent ♡";
+
+                form.reset();
+
+            } else {
+
+                throw new Error(
+                    "Form submission failed"
+                );
+
+            }
+
+
+        } catch (error) {
+
+            status.innerText =
+                "something went wrong 😭 try again";
+
+            sendButton.disabled =
+                false;
+
+            sendButton.innerText =
+                "Send to me ♡";
+
+        }
+
+    }
+);
+
+</script>
+
+</body>
+</html>
